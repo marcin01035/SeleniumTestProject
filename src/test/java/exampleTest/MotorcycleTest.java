@@ -1,3 +1,5 @@
+package exampleTest;
+
 import org.testng.annotations.Test;
 
 public class MotorcycleTest extends TestHelper {

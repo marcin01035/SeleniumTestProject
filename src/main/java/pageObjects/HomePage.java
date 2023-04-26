@@ -1,5 +1,6 @@
 package pageObjects;
 
+import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -23,6 +24,7 @@ public class HomePage {
         PageFactory.initElements(driver, this);
     }
 
+    @Step("Go to motorcycle form")
     public void clickOnMotorCycleLink() {
         linkToMotorcycle.click();
     }
