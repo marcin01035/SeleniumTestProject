@@ -1,12 +1,15 @@
 package exampleTest;
 
 import io.qameta.allure.Step;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 import utils.ObjectsRepo;
 import utils.PropertiesReader;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.testng.annotations.*;
 
 import java.time.Duration;
+import java.util.List;
 
 public class TestHelper extends ObjectsRepo{
 
@@ -29,6 +32,12 @@ public class TestHelper extends ObjectsRepo{
     @Step("Close website browser")
     public void closeEnvironment() {
         driver.quit();
+    }
+
+    @Step("Get dropdown options ")
+    public List<String> getModelDropdownOption(WebElement webElement ) {
+        Select os = new Select(webElement);
+        return os.getOptions().stream().map(WebElement::getText).toList();
     }
 }
 
